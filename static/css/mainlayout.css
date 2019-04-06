@@ -1,0 +1,175 @@
+﻿:root {
+    --colText: #FFFFFC;
+    --colPanelDark: #2D4571;
+    /*--colPanelLight: #FFEAC4;*/
+    --colPanelLight: #FFE1AA;
+
+    /* Red colors */
+    /*--colPanelDark: #711414;
+     --colPanelLight: #3C3939;*/
+}
+
+@font-face {
+    font-family: 'Crimson-Roman';
+    src: url("font/crimson/Crimson-Roman.otf");
+}
+
+@font-face {
+    font-family: 'Crimson-Header';
+    src: url("font/crimson/Crimson-Bold.otf");
+}
+
+@font-face {
+    font-family: 'Crimson-Header-Italics';
+    src: url("font/crimson/Crimson-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: 'Crimson-Italics';
+    src: url('font/crimson/Crimson-Italic.otf');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--colPanelLight);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--colText);
+    font-family: Crimson-Header;
+}
+
+p {
+    color: var(--colText);
+    font-family: Crimson-Roman;
+}
+
+a:link, a:visited, a:active {
+    color: var(--colText);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table th, tr {
+    font-family: Crimson-Header;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--colPanelDark);
+    min-height: 50px;
+    padding: 0;
+}
+
+    .navbar p {
+        display: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-family: Crimson-Header;
+        font-size: 2.3em;
+        cursor: default;
+    }
+
+    .navbar > ul {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0.3em 10%;
+    }
+
+    .navbar li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    .navbar ul > li > a:link,
+    .navbar ul > li > a:visited,
+    .navbar ul > li > a:active {
+        font-family: Crimson-Header;
+        font-size: 2em;
+    }
+
+.content {
+    margin: 0;
+    padding: 100px 0 50px 0;
+    min-height: calc(100vh - 250px);
+}
+
+.footer {
+    margin: 0;
+    padding: 0;
+    background: var(--colPanelDark);
+    height: 100px;
+}
+
+    .footer > ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        height: 100px;
+    }
+
+    .footer li {
+        min-height: 10px;
+        min-height: 10px;
+        margin: auto;
+    }
+
+    .footer ul > li > a:link,
+    .footer ul > li > a:visited,
+    .footer ul > li > a:active {
+        font-family: Crimson-Header;
+        font-size: 2.5em;
+    }
+
+@media only screen and (max-width: 969px) {
+    /* Pure css menu http://koen.kivits.com/articles/pure-css-menu/ */
+    .navbar {
+        height: 50px;
+    }
+
+        .navbar p {
+            display: block;
+        }
+
+        .navbar ul {
+            opacity: 0;
+            z-index: 1;
+            visibility: hidden;
+            -moz-transition: visibility 0.5s;
+            -o-transition: visibility 0.5s;
+            -webkit-transition: visibility 0.5s;
+            transition: visibility 0.5s;
+        }
+
+        .navbar:focus {
+            height: auto;
+        }
+
+            .navbar:focus ul {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+        .navbar li {
+            display: block;
+        }
+
+    .footer ul > li > a:link,
+    .footer ul > li > a:visited,
+    .footer ul > li > a:active {
+        font-size: 4vw;
+    }
+}

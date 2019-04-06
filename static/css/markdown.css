@@ -1,0 +1,206 @@
+﻿:root {
+    --colMdText: rgb(10, 10, 10);
+    --colMdOutline: rgba(10,10,10, 0.4);
+    --colMdPanel: rgba(255, 255, 255, 0.80);
+    --colMdPanelInverse: rgba(0, 0, 0, 0.03);
+}
+
+.markdownSuave {
+    display: block;
+    max-width: 60%;
+    margin: 0 18% 0 auto;
+    padding: 0 2%;
+    background: var(--colMdPanel);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+    .markdownSuave h1 {
+        font-size: 3.2em;
+        text-align: center;
+        color: var(--colMdText);
+        margin: 80px 0;
+    }
+
+    .markdownSuave h2 {
+        color: var(--colMdText);
+        font-size: 2.5em;
+        padding-left: 20px;
+    }
+
+    .markdownSuave h3 {
+        color: var(--colMdText);
+        font-size: 1.8em;
+    }
+
+    .markdownSuave h4,
+    .markdownSuave h5,
+    .markdownSuave h6 {
+        color: var(--colMdText);
+        font-size: 1.2em;
+    }
+
+        .markdownSuave h1:before,
+        .markdownSuave h2:before,
+        .markdownSuave h3:before,
+        .markdownSuave h4:before {
+            display: block;
+            content: " ";
+            margin-top: -80px;
+            height: 80px;
+            visibility: hidden;
+        }
+
+    .markdownSuave p {
+        color: var(--colMdText);
+        font-size: 1.1em;
+    }
+
+    .markdownSuave pre {
+        background: var(--colMdPanelInverse);
+        padding: 10px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        overflow-x: auto;
+    }
+
+        .markdownSuave pre > code {
+            font-family: Cambria;
+            font-size: 15px;
+            /*background: var(--colMdPanelInverse);
+        margin: 10px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3pxpx;*/
+        }
+
+    .markdownSuave a:link, .markdownSuave a:visited, .markdownSuave a:active {
+        color: var(--colPanelDark);
+        text-decoration: none;
+    }
+
+    .markdownSuave a:hover {
+        text-decoration: underline;
+    }
+
+    .markdownSuave hr {
+        margin: 70px 0 20px 0;
+        border: 0;
+        border-top: 1px solid var(--colMdOutline);
+    }
+
+    .markdownSuave table {
+        margin-bottom: 1.333333rem;
+        min-width: 300px;
+        width: 100%;
+    }
+
+        .markdownSuave table th,
+        .markdownSuave table td {
+            padding: 8px;
+            line-height: 1.333333rem;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .markdownSuave table th {
+            font-weight: bold;
+        }
+
+        .markdownSuave table thead th {
+            vertical-align: bottom;
+        }
+
+        .markdownSuave table caption + thead tr:first-child th,
+        .markdownSuave table caption + thead tr:first-child td,
+        .markdownSuave table colgroup + thead tr:first-child th,
+        .markdownSuave table colgroup + thead tr:first-child td,
+        .markdownSuave table thead:first-child tr:first-child th,
+        .markdownSuave table thead:first-child tr:first-child td {
+            border-top: 0;
+        }
+
+        .markdownSuave table tbody + tbody {
+            border-top: 2px solid #ddd;
+        }
+
+.markdownTOC {
+    position: fixed;
+    display: block;
+    padding: 0;
+    margin: 0 0 0 1%;
+    width: 16%;
+    background: var(--colMdPanel);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    word-wrap: hyphenate;
+    overflow-wrap: break-word;
+}
+
+    .markdownTOC > h1 {
+        color: var(--colMdText);
+        padding: 10px 0 5px 0;
+        margin: 5px;
+        font-size: 1em;
+        /*text-decoration: underline;*/
+        border-bottom: 1px solid var(--colMdOutline);
+    }
+
+    .markdownTOC > ul {
+        padding: 0 5px;
+    }
+
+        .markdownTOC > ul > li {
+            list-style: none;
+        }
+
+            .markdownTOC > ul > li > ul > li {
+                list-style: upper-roman;
+            }
+
+                .markdownTOC > ul > li > ul > li > ul li {
+                    list-style: lower-roman;
+                }
+
+    .markdownTOC ul > li > a:link,
+    .markdownTOC ul > li > a:visited,
+    .markdownTOC ul > li > a:active {
+        font-family: Crimson-Italics;
+        color: var(--colMdText);
+    }
+
+
+@media only screen and (max-width: 1400px) {
+
+    .markdownSuave {
+        margin: 0 1% 0 auto;
+        max-width: 77%;
+    }
+}
+
+@media only screen and (max-width: 969px) {
+    .markdownSuave {
+        margin: 0 1%;
+        max-width: none;
+    }
+
+    .markdownTOC {
+        position: static;
+        width: auto;
+        margin: 0 1%;
+        font-size: 20px;
+    }
+
+        .markdownTOC h1 {
+            text-indent: 8%;
+            margin: 0 2%;
+        }
+
+        .markdownTOC > ul {
+            padding-left: 10%;
+        }
+}

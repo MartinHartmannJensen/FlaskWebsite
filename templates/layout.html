@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href="{{url_for("static", filename="css/mainlayout.css")}}" rel="stylesheet" />
+    <link href="{{url_for("static", filename="css/markdown.css")}}" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <div tabindex="0" class="navbar">
+        <p>Menu</p>
+        <ul>
+            <li><a href="{{url_for('index')}}">Main Page</a></li>
+            <li><a href="{{url_for('twitch')}}">Twitch Project</a></li>
+            <li><a href="{{url_for('winscripts')}}">Windows Scripts</a></li>
+            <li><a href="{{url_for('prorem')}}">Prj. Remembrance</a></li>
+            <li><a href="{{url_for("timeApp")}}" target="_blank">Time App</a></li>
+        </ul>
+    </div>
+    <!--Content-->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <!--Footer-->
+    <footer class="footer">
+        <ul>
+            <li><a href="{{url_for("contact")}}">Contact</a></li>
+            <li><a href="https://github.com/martinhartmannjensen" target="_blank">Git</a></li>
+            <li><a href="{{url_for("flask")}}">Flask</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="markdownTOC">
+    <h1>Table of Contents</h1>
+    {{ md.Toc()|safe }}
+</div>
+<div class="markdownSuave">
+    {{ md.Doc()|safe }}
+</div>
+{% endblock %}

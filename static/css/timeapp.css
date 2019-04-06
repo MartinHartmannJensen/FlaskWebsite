@@ -1,0 +1,174 @@
+:root {
+    --colText: rgba(0, 0, 0, 0.8);
+    --colTextInverse: #FFFBF5;
+    --colPanelLight: #F6E7CF;
+    --colPanelDark: #A18962;
+    --colHighlight: #63491F;
+    --colOutline: #382403;
+}
+
+body {
+    background: var(--colPanelLight);
+    padding: 0;
+    margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: var(--colTextInverse);
+}
+
+a {
+}
+
+    a:link, a:visited, a:active {
+        color: var(--colTextInversed);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.timeline-container {
+    background: var(--colPanelDark);
+    padding: 0 5%;
+}
+
+.timeline {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline-item {
+    text-align: center;
+    padding: 0 0.3%;
+    cursor: default;
+}
+
+    .timeline-item div:hover h1, .timeline-item div:hover p {
+        color: var(--colHighlight);
+    }
+
+    .timeline-item div:hover .timeline-descriptionbox div {
+        display: block;
+    }
+
+    .timeline-item div > h1, .timeline-item div > p {
+        padding: 0;
+        margin: 0;
+        font-size: 1.0vw;
+    }
+
+.timeline-descriptionbox {
+    position: relative;
+    right: 70px;
+}
+
+    .timeline-descriptionbox div {
+        display: none;
+        position: absolute;
+        min-width: 200px;
+        border: solid;
+        border-width: 1px;
+        border-radius: 2px;
+        background: var(--colPanelLight);
+        border-color: var(--colOutline);
+        color: var(--colTextInverse);
+    }
+
+        .timeline-descriptionbox div > h3, .timeline-descriptionbox div > p {
+            color: var(--colText);
+            padding: 0 5px;
+            margin: 2px 0;
+        }
+
+.map-container {
+}
+
+    .map-container img {
+        width: 100%;
+        height: auto;
+    }
+
+
+.timefooter {
+    background: var(--colPanelDark);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .timefooter .left {
+        display: inline-block;
+        width: auto;
+        max-width: 350px;
+    }
+
+        .timefooter .left > h4 {
+            margin: 4px 30px;
+        }
+
+    .timefooter .center {
+        display: inline-block;
+        width: 300px;
+    }
+
+    .timefooter .right {
+        display: inline-block;
+        width: auto;
+        max-width: 350px;
+    }
+
+        .timefooter .right > h3, p {
+            margin: 3px 5px;
+            line-height: 18px;
+        }
+
+@media only screen and (max-width: 1000px) {
+    .map-container {
+        display: none;
+    }
+
+    .timeline-descriptionbox {
+        display: none;
+    }
+
+    .timeline-container {
+        margin-bottom: 100px;
+    }
+
+    .timeline {
+        display: block;
+    }
+
+    .timeline-item {
+        display: block;
+        text-align: left;
+        padding-left: 20%;
+    }
+
+        .timeline-item > div {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+    .timefooter {
+        border-top: 1px solid var(--colOutline);
+    }
+
+    .timeline-item div > h1, .timeline-item div > p {
+        font-size: x-large;
+    }
+
+    .timefooter .left {
+        display: none;
+    }
+
+    .timefooter .right {
+        display: none;
+    }
+}
